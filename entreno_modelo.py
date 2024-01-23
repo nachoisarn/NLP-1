@@ -1,22 +1,6 @@
-import os
-import re
-import numpy as np
-import pandas as pd
 import matplotlib.pyplot as plt
-import itertools
-
 import tensorflow as tf
-from tensorflow import keras
-from keras import layers
-from sklearn.model_selection import train_test_split
-from sklearn.utils import shuffle
-from sklearn.metrics import classification_report
-from ast import literal_eval
-
-from funciones import split, vocabulary_fun, lookup_fun
 from datos import datos
-
-
 
 
 def train_model(modelpath, filepath):

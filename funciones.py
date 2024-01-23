@@ -1,7 +1,6 @@
 import pandas as pd
 from tensorflow import keras
 from sklearn.model_selection import train_test_split
-from keras.layers import TextVectorization
 import tensorflow as tf
 
 filepath = 'data_entrenamiento.csv'
@@ -46,8 +45,7 @@ def vocabulary_fun(filepath = filepath):
     return vocabulary
 
 def lookup_fun(filepath = filepath):
- 
-    from ast import literal_eval
+
     train_dataframe, test_dataframe, val_dataframe = split(filepath)
     
     unique_labels = set([elemento for lista in train_dataframe['sentiment'] for elemento in lista])

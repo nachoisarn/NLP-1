@@ -1,24 +1,8 @@
-import os
-import re
-import numpy as np
-import pandas as pd
-import matplotlib.pyplot as plt
-import itertools
-
 import tensorflow as tf
 from tensorflow import keras
-from keras import layers
-from sklearn.model_selection import train_test_split
-from sklearn.utils import shuffle
-from sklearn.metrics import classification_report
-from ast import literal_eval
-
-from funciones import split, vocabulary_fun, lookup_fun, textVectorizer, make_dataset, invert_multi_hot
-from datos import datos
+from funciones import split, lookup_fun, textVectorizer, make_dataset, invert_multi_hot
 
 def model_of_inference(modelpath):
-
-    
 
     train_dataframe, test_dataframe, val_dataframe = split()
     lookup = lookup_fun()
@@ -42,7 +26,6 @@ def model_of_inference(modelpath):
         print(f"Abstract: {text}")
         print(f"Label(s): {invert_multi_hot(vocab, label[0])}")
 
-        #predicted_proba = [proba for proba in predicted_probabilities[i]]
         top_labels = [
             x
             for _, x in sorted(
